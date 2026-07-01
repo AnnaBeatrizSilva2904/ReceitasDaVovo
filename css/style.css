@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap');
+
+:root {
+    --fonte-padrao: "Crimson Text", serif;
+    --fonte-secundaria: "Dancing Script", cursive;
+    --cor-fundo: #EEECD5;
+    --cor-botoes: #F3B13C;
+    --cor-letras: #0F198A;
+    --cor-detalhes-fundo: #4B84E1;
+    --cor-fonte-detalhes: #EEECD5;
+    --cor-section: #F6DC99;
+    --cor-navbar:#0F198A;
+}
