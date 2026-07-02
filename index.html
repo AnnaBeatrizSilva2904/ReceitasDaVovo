@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas da Vovó - Início</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Receitas Da Vovó</h1>
+        <p>Culinária caseira com amor e tradição</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="salgadas.html">Receitas Salgadas</a></li>
+                <li><a href="doces.html">Receitas Doces</a></li>
+                <li><a href="molhos.html">Molhos e Acompanhamentos</a></li>
+                <li><a href="laranjose.html">Laranjose</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <h2>Bem-vindo ao Portal de Receitas da Vovó!</h2>
+        <p>Aqui você encontra os pratos mais saborosos, explicados de um jeito simples e com aquele toque profissional e afetuoso que só a vovó consegue dar.</p>
+        <p>Escolha uma categoria no menu acima para começar a cozinhar hoje mesmo!</p>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Receitas da Vovó. Todos os direitos reservados.</p>
+    </footer>
+
+    <div id="laranjose-container" style="display:none;">
+        <div id="chatBox"></div>
+        <div id="stepTipo" class="control-step active"></div>
+        <div id="stepIngredientes" class="control-step">
+            <div id="ingredientsGrid"></div>
+        </div>
+        <div id="stepReiniciar" class="control-step"></div>
+    </div>
+
+    <div id="recipeModal">
+        <h2 id="modalTitle"></h2>
+        <ul id="modalObrigatorios"></ul>
+        <ul id="modalOpcionais"></ul>
+        <div id="modalPreparo"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

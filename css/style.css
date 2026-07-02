@@ -12,3 +12,158 @@
     --cor-section: #F6DC99;
     --cor-navbar:#0F198A;
 }
+
+/* ==========================================================================
+   Configurações Gerais (Reset e Fontes)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcf8f2; /* Tom de fundo off-white quentinho */
+    color: #4a3b32; /* Texto marrom escuro para melhor leitura */
+    line-height: 1.6;
+}
+
+/* Base de conteúdo centralizado */
+header, main, footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Links globais */
+a {
+    color: #d96b27;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #b04c14;
+}
+
+/* Linha divisória discreta */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e6dcd3;
+    margin: 20px 0;
+}
+
+/* ==========================================================================
+   Cabeçalho (Header) e Menu de Navegação
+   ========================================================================== */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-bottom: 3px solid #e7a635; /* Detalhe em dourado/amarelo */
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #b04c14; /* Tom terracota */
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    color: #7d685a;
+    margin-bottom: 20px;
+}
+
+/* Menu de navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    background-color: #f7ede2;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #e6dcd3;
+}
+
+nav a:hover {
+    background-color: #d96b27;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Seção Principal e Títulos (Main)
+   ========================================================================== */
+main h2 {
+    font-size: 2rem;
+    color: #b04c14;
+    margin-bottom: 10px;
+}
+
+main > p {
+    font-size: 1.1rem;
+    color: #7d685a;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   Cards das Receitas (Sections)
+   ========================================================================== */
+section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    border-left: 5px solid #d96b27; /* Barrinha lateral charmosa */
+}
+
+section h3 {
+    font-size: 1.6rem;
+    color: #4a3b32;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f7ede2;
+    padding-bottom: 5px;
+}
+
+section h4 {
+    font-size: 1.1rem;
+    color: #d96b27;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+/* Listas de Ingredientes e Modo de Preparo */
+section ul, section ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+section li {
+    margin-bottom: 6px;
+}
+
+/* Estilo extra para o Modo de Preparo (Lista Ordenada) */
+section ol li {
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   Rodapé (Footer)
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #9c8a7e;
+    font-size: 0.9rem;
+}
