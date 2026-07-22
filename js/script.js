@@ -90,10 +90,10 @@ let ingredientesEscolhidos = [];
 
 // 2. Lista Consolidada de Inputs baseada nas novas receitas
 const todosIngredientes = [
-    "açúcar", "arroz", "batata", "café", "caldo knorr", "cebola", "cenoura", 
-    "chocolate em barra", "chocolate em pó", "conhaque", "creme de leite", "farinha", 
-    "fermento", "gelatina de maracujá", "leite", "leite condensado", "leite em pó", 
-    "maizena", "manteiga", "óleo", "ovo", "polvilho doce", "presunto", "queijo ralado", 
+    "açúcar", "arroz", "batata", "café", "caldo knorr", "cebola", "cenoura",
+    "chocolate em barra", "chocolate em pó", "conhaque", "creme de leite", "farinha",
+    "fermento", "gelatina de maracujá", "leite", "leite condensado", "leite em pó",
+    "maizena", "manteiga", "óleo", "ovo", "polvilho doce", "presunto", "queijo ralado",
     "queijo", "sal", "cheiro verde", "pimenta", "suco de maracujá"
 ];
 
@@ -110,7 +110,7 @@ function adicionarMensagem(texto, remetente) {
 // Passo 1: Captura o tipo e avança
 function selecionarTipo(tipo) {
     tipoSelecionado = tipo;
-    
+
     const textos = {
         doce: "Quero receitas doces! 🍰",
         salgado: "Quero receitas salgadas! 🍔",
@@ -170,14 +170,14 @@ function processarReceitas() {
     setTimeout(() => {
         // Filtra pelo tipo (Doce / Salgado / Tanto Faz)
         const receitasFiltradas = receitas.filter(r => tipoSelecionado === "tanto_faz" || r.tipo === tipoSelecionado);
-        
+
         let possiveis = [];
         let quasePossiveis = [];
 
         receitasFiltradas.forEach(receita => {
             // Verifica quais ingredientes obrigatórios da receita o usuário NÃO possui
             const faltantesObrigatorios = receita.obrigatorios.filter(ing => !ingredientesEscolhidos.includes(ing));
-            
+
             if (faltantesObrigatorios.length === 0) {
                 possiveis.push(receita);
             } else if (faltantesObrigatorios.length === 1) {
@@ -190,7 +190,7 @@ function processarReceitas() {
             adicionarMensagem("Hum... com o que você marcou, infelizmente não consegui encontrar receitas compatíveis no momento sem que faltem muitos itens. 😕", "bot");
         } else {
             adicionarMensagem(`Encontrei opções compatíveis com sua despensa:`, "bot");
-            
+
             // Renderiza as receitas completas primeiro
             possiveis.forEach(r => {
                 criarCardResposta(r.nome, "possivel", `Você tem todos os ingredientes obrigatórios! Clique para ver o preparo.`, r);
@@ -211,7 +211,7 @@ function criarCardResposta(nome, status, subtexto, dadosCompletos) {
     const chatBox = document.getElementById("chatBox");
     const card = document.createElement("div");
     card.className = "recipe-card";
-    
+
     const tagClass = status === "possivel" ? "status-possivel" : "status-quase";
     const tagTexto = status === "possivel" ? "POSSÍVEL" : "QUASE LÁ";
 
@@ -220,7 +220,7 @@ function criarCardResposta(nome, status, subtexto, dadosCompletos) {
         <strong>${nome}</strong>
         <p style="font-size: 12.5px; color: #555; margin-top: 4px;">${subtexto}</p>
     `;
-    
+
     card.onclick = () => abrirModal(dadosCompletos);
 
     chatBox.appendChild(card);
@@ -230,12 +230,12 @@ function criarCardResposta(nome, status, subtexto, dadosCompletos) {
 // Controle do Modal de Modo de Preparo
 function abrirModal(receita) {
     document.getElementById("modalTitle").innerText = receita.nome;
-    
+
     const ulOb = document.getElementById("modalObrigatorios");
     ulOb.innerHTML = receita.obrigatorios.map(i => `<li>${i}</li>`).join("");
 
     const ulOp = document.getElementById("modalOpcionais");
-    ulOp.innerHTML = receita.opcionais.length > 0 
+    ulOp.innerHTML = receita.opcionais.length > 0
         ? receita.opcionais.map(i => `<li>${i}</li>`).join("")
         : "<li>Nenhum ingrediente opcional cadastrado para esta receita.</li>";
 
@@ -257,6 +257,14 @@ function reiniciarBot() {
     document.getElementById("chatBox").innerHTML = `
         <div class="message bot-message">
             Vamos começar de novo! Que tipo de receita você está procurando hoje?
+        </div>
+        <div id="stepTipo" class="control-step active">
+            <button onclick="selecionarTipo('doce')"><iconify-icon
+                icon="streamline-plump:cake-slice-solid"></iconify-icon>Doces</button>
+            <button onclick="selecionarTipo('salgado')"><iconify-icon
+                icon="streamline-plump:burger-solid"></iconify-icon>Salgadas</button>
+            <button onclick="selecionarTipo('tanto_faz')"><iconify-icon
+                icon="streamline-plump:chef-toque-hat-solid"></iconify-icon>Tanto Faz</button>
         </div>
     `;
     mudarPasso("stepTipo");

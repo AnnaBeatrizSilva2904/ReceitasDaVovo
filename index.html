@@ -1,36 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receitas da Vovó - Início</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
 </head>
+
 <body>
 
     <header>
-        <h1>Receitas Da Vovó</h1>
-        <p>Culinária caseira com amor e tradição</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="salgadas.html">Receitas Salgadas</a></li>
-                <li><a href="doces.html">Receitas Doces</a></li>
-                <li><a href="molhos.html">Molhos e Acompanhamentos</a></li>
-                <li><a href="laranjose.html">Laranjose</a></li>
-            </ul>
-        </nav>
+        <img src="/img/logo.png" alt="Logo Receitas">
+        <div class="botao">
+            <a href="laranjose.html">Laranjosé</a>
+        </div>
     </header>
 
-    <hr>
+    <section>
+        <div class="imagem">
+            <img src="/img/logotipo2.png" alt="">
+        </div>
+        <h1>
+            <iconify-icon icon="streamline-plump:wheat-solid" class="esquerda" style="font-size: 40px; color:#F3B13C;"></iconify-icon> 
+            O sabor da infância, as receitas da Vovó 
+            <iconify-icon icon="streamline-plump:wheat-solid" class="direita" style="font-size: 40px; color:#F3B13C;"></iconify-icon>
+        </h1>
+    </section>
 
-    <main>
-        <h2>Bem-vindo ao Portal de Receitas da Vovó!</h2>
-        <p>Aqui você encontra os pratos mais saborosos, explicados de um jeito simples e com aquele toque profissional e afetuoso que só a vovó consegue dar.</p>
-        <p>Escolha uma categoria no menu acima para começar a cozinhar hoje mesmo!</p>
-    </main>
+    <div class="livro">
+        <img src="/img/livro.png" alt="" srcset="">
+        <div class="conteudo">
+            <h2>Livro de receitas da Dona Cida</h2>
+            <p>Entre e sinta-se em casa, pois a cozinha da vovó está sempre aberta para quem busca o verdadeiro conforto
+                em forma de comida. Neste espaço, reunimos as receitas mais queridas da Dona Cida, compartilhando cada
+                detalhe e truque que aprendemos ao pé do fogão, para que você possa levar para o seu dia a dia o sabor
+                nostálgico de um tempo onde a maior alegria era ver a família reunida em volta de uma mesa farta.</p>
+        </div>
+    </div>
 
-    <hr>
+    <div class="receitas">
+        <h1>Receitas</h1>
+        <div class="cards">
+            <div class="doce">
+                <h3>
+                    <a href="doces.html">Receitas Doces
+                        <img src="/img/categoriaDoce.png" alt="">
+                    </a>
+                </h3>
+            </div>
+            <div class="salgados">
+                <h3>
+                    <a href="salgadas.html">Receitas Salgadas
+                        <img src="/img/categoriaSalgados.png" alt="">
+                    </a>
+                </h3>
+            </div>
+            <div class="molhos">
+                <h3>
+                    <a href="molhos.html">Molhos e Acompanhamentos
+                        <img src="img/categoriaMolhos.png" alt="" srcset="">
+                    </a>
+                </h3>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 Receitas da Vovó. Todos os direitos reservados.</p>
@@ -54,4 +89,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
