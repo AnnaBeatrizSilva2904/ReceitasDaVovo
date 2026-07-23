@@ -126,12 +126,26 @@ function selecionarTipo(tipo) {
     }, 600);
 }
 
-// Constrói os checkboxes interativos baseados no array de ingredientes
+function getIngredientesPorTipo(tipo) {
+    if (tipo === "tanto_faz" || tipo === "") {
+        return [...new Set(todosIngredientes)].sort();
+    }
+
+    const ingredientes = receitas
+        .filter(r => r.tipo === tipo)
+        .flatMap(r => [...r.obrigatorios, ...r.opcionais]);
+
+    return [...new Set(ingredientes)].sort();
+}
+
+// Constrói os checkboxes interativos baseados no array de ingredientes filtrado pelo tipo
 function renderizarIngredientes() {
     const grid = document.getElementById("ingredientsGrid");
     grid.innerHTML = "";
 
-    todosIngredientes.sort().forEach(ing => {
+    const ingredientesParaExibir = getIngredientesPorTipo(tipoSelecionado);
+
+    ingredientesParaExibir.forEach(ing => {
         const label = document.createElement("label");
         label.className = "ing-label";
         label.innerHTML = `<input type="checkbox" value="${ing}" onchange="toggleIngrediente(this)"> ${ing}`;
