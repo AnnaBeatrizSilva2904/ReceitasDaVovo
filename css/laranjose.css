@@ -44,7 +44,7 @@ main p {
 .laranjose img {
     justify-content: center;
     align-items: center;
-    height: 450px;
+    height: 400px;
 }
 
 .chat-box {
@@ -61,9 +61,13 @@ main p {
     border-radius: 25px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 850px) {
     .laranjose {
         flex-direction: column-reverse;
+    }
+
+    .laranjose img {
+        height: 300px;
     }
 
     .chat-box {
